@@ -420,12 +420,16 @@ $$('a[href^="#"]').forEach((a) => {
 /* ---------- Header : se cache en descendant, revient en remontant ---------- */
 const header = $(".header");
 header.insertAdjacentHTML("beforeend", '<span class="progress" aria-hidden="true"></span>');
+// se cache en descendant, revient en remontant… et dès qu'on arrête de scroller
 let lastY = 0;
+let idleTimer = null;
 const onScroll = () => {
   const y = window.scrollY;
   header.classList.toggle("is-scrolled", y > 20);
   header.classList.toggle("is-hidden", y > 400 && y > lastY && !nav.classList.contains("is-open"));
   lastY = y;
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(() => header.classList.remove("is-hidden"), 350);
 };
 window.addEventListener("scroll", onScroll, { passive: true });
 
