@@ -392,7 +392,7 @@ const Lightbox = (() => {
    ========================================================= */
 let lenis = null;
 if (hasGsap && window.Lenis && !reduced) {
-  lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
+  lenis = new Lenis({ lerp: 0.16, wheelMultiplier: 1.05 });
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -402,7 +402,7 @@ function scrollToTarget(hash) {
   const target = hash === "#top" ? 0 : $(hash);
   if (target === null) return;
   const behavior = reduced ? "auto" : "smooth";
-  if (lenis) lenis.scrollTo(target, { duration: 1.5 });
+  if (lenis) lenis.scrollTo(target, { duration: 1.1 });
   else if (target === 0) window.scrollTo({ top: 0, behavior });
   else target.scrollIntoView({ behavior });
 }
@@ -416,6 +416,10 @@ $$('a[href^="#"]').forEach((a) => {
     scrollToTarget(hash);
   });
 });
+
+/* ---------- Ballons du hero : pause quand on n'est plus en haut de page ---------- */
+const heroEl = $(".hero");
+new IntersectionObserver(([e]) => heroEl.classList.toggle("is-off", !e.isIntersecting)).observe(heroEl);
 
 /* ---------- Header : se cache en descendant, revient en remontant ---------- */
 const header = $(".header");
@@ -507,14 +511,14 @@ if (!hasGsap) {
   /* --- loader --- */
   const pageReady = Promise.race([
     new Promise((r) => (document.readyState === "complete" ? r() : window.addEventListener("load", r, { once: true }))),
-    new Promise((r) => setTimeout(r, 2600)),
+    new Promise((r) => setTimeout(r, 1200)),
   ]);
   const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
 
   const tl = gsap.timeline({ paused: true });
-  tl.from(".loader__word span", { yPercent: 110, duration: 1, stagger: 0.06, ease })
-    .from(".loader__script", { opacity: 0, x: -20, duration: 0.9, ease }, "-=.6")
-    .to(".loader__bar span", { scaleX: 1, duration: 1.1, ease: "power2.inOut" }, 0);
+  tl.from(".loader__word span", { yPercent: 110, duration: 0.7, stagger: 0.04, ease })
+    .from(".loader__script", { opacity: 0, x: -20, duration: 0.6, ease }, "-=.4")
+    .to(".loader__bar span", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 0);
 
   if (document.visibilityState === "hidden") {
     // page ouverte dans un onglet en arrière-plan : pas d'intro, tout s'affiche directement
@@ -525,23 +529,23 @@ if (!hasGsap) {
       tl.play();
       Promise.all([pageReady, new Promise((r) => tl.eventCallback("onComplete", r))]).then(() => {
         gsap.timeline()
-          .to(".loader", { clipPath: "inset(0 0 100% 0)", duration: 1.1, ease: "expo.inOut" })
+          .to(".loader", { clipPath: "inset(0 0 100% 0)", duration: 0.8, ease: "expo.inOut" })
           .set(".loader", { display: "none" })
-          .add(heroIntro(), "-=.55");
+          .add(heroIntro(), "-=.4");
       });
     });
   }
 
   function heroIntro() {
     return gsap.timeline({ onComplete: startStack })
-      .to(".header", { yPercent: 0, duration: 1, ease, clearProps: "transform" }, 0)
-      .to(".hero__title .line > span", { yPercent: 0, duration: 1.3, stagger: 0.12, ease }, 0)
-      .to(".hero__eyebrow", { y: 0, opacity: 1, duration: 1, ease }, 0.1)
-      .to([".hero__lead", ".hero__actions"], { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease }, 0.35)
-      .to(".hero__visual", { y: 0, rotate: 0, opacity: 1, duration: 1.5, ease }, 0.15)
-      .to(stackPosts.slice().reverse(), { opacity: 1, duration: 0.8, stagger: 0.15, ease: "power2.out", clearProps: "opacity" }, 0.25)
-      .to(".hero__badge", { scale: 1, rotate: 0, duration: 1.2, ease: "back.out(1.6)" }, 0.8)
-      .to(".balloon", { scale: 1, opacity: 1, duration: 1.4, stagger: 0.08, ease: "elastic.out(1, .6)" }, 0.6);
+      .to(".header", { yPercent: 0, duration: 0.8, ease, clearProps: "transform" }, 0)
+      .to(".hero__title .line > span", { yPercent: 0, duration: 0.95, stagger: 0.08, ease }, 0)
+      .to(".hero__eyebrow", { y: 0, opacity: 1, duration: 0.8, ease }, 0.05)
+      .to([".hero__lead", ".hero__actions"], { y: 0, opacity: 1, duration: 0.8, stagger: 0.07, ease }, 0.2)
+      .to(".hero__visual", { y: 0, rotate: 0, opacity: 1, duration: 1.05, ease }, 0.1)
+      .to(stackPosts.slice().reverse(), { opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out", clearProps: "opacity" }, 0.15)
+      .to(".hero__badge", { scale: 1, rotate: 0, duration: 0.8, ease: "back.out(1.6)" }, 0.5)
+      .to(".balloon", { scale: 1, opacity: 1, duration: 1, stagger: 0.05, ease: "elastic.out(1, .6)" }, 0.4);
   }
 
   /* --- titres : révélation mot par mot (SplitText) --- */
@@ -553,12 +557,12 @@ if (!hasGsap) {
           mask: "lines",
           autoSplit: true,
           onSplit: (self) => gsap.from(self.words, {
-            yPercent: 120, duration: 1.2, stagger: 0.07, ease,
-            scrollTrigger: { trigger: el, start: "top 86%" },
+            yPercent: 105, duration: 0.85, stagger: 0.035, ease,
+            scrollTrigger: { trigger: el, start: "top 92%" },
           }),
         });
       } else {
-        gsap.from(el, { y: 50, opacity: 0, duration: 1.2, ease, scrollTrigger: { trigger: el, start: "top 86%" } });
+        gsap.from(el, { y: 40, opacity: 0, duration: 0.8, ease, scrollTrigger: { trigger: el, start: "top 92%" } });
       }
     });
     ScrollTrigger.refresh();
@@ -566,29 +570,29 @@ if (!hasGsap) {
 
   /* --- apparitions simples --- */
   $$("[data-fade]").forEach((el) => gsap.from(el, {
-    y: 40, opacity: 0, duration: 1.2, ease,
-    scrollTrigger: { trigger: el, start: "top 88%" },
+    y: 30, opacity: 0, duration: 0.8, ease,
+    scrollTrigger: { trigger: el, start: "top 92%" },
   }));
 
-  gsap.set("[data-stagger]", { y: 60, opacity: 0 });
+  gsap.set("[data-stagger]", { y: 40, opacity: 0 });
   ScrollTrigger.batch("[data-stagger]", {
-    start: "top 90%",
+    start: "top 94%",
     once: true,
-    onEnter: (batch) => gsap.to(batch, { y: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease }),
+    onEnter: (batch) => gsap.to(batch, { y: 0, opacity: 1, duration: 0.8, stagger: 0.06, ease }),
   });
 
   /* --- images : rideau + dézoom --- */
   $$("[data-reveal]").forEach((el) => {
     const media = $("img, video", el);
-    const t = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 85%" } });
-    t.fromTo(el, { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: "expo.inOut" });
-    if (media) t.from(media, { scale: 1.35, duration: 1.8, ease }, 0);
+    const t = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 90%" } });
+    t.fromTo(el, { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1, ease: "expo.inOut" });
+    if (media) t.from(media, { scale: 1.2, duration: 1.2, ease }, 0);
   });
 
   /* --- fil Instagram : cartes qui montent en cascade --- */
   gsap.from("#feed .ig-post", {
-    y: 120, rotate: (i) => [-4, 0, 4][i % 3], opacity: 0, duration: 1.4, stagger: 0.14, ease,
-    scrollTrigger: { trigger: "#feed", start: "top 85%" },
+    y: 70, rotate: (i) => [-3, 0, 3][i % 3], opacity: 0, duration: 0.9, stagger: 0.08, ease,
+    scrollTrigger: { trigger: "#feed", start: "top 92%" },
   });
 
   /* --- parallaxe --- */
@@ -627,7 +631,11 @@ if (!hasGsap) {
   measure();
   window.addEventListener("resize", measure);
   let boost = 0;
+  // on n'anime le bandeau que lorsqu'il est à l'écran
+  let marqueeOn = false;
+  new IntersectionObserver(([e]) => (marqueeOn = e.isIntersecting)).observe(marquee);
   gsap.ticker.add((_, dt) => {
+    if (!marqueeOn) return;
     const v = lenis ? lenis.velocity : 0;
     boost += (Math.min(Math.abs(v), 60) - boost) * 0.08;
     rows.forEach((r) => {
@@ -641,15 +649,15 @@ if (!hasGsap) {
   /* --- galerie : les photos glissent pendant qu'on passe devant (sans bloquer le scroll) --- */
   const mm = gsap.matchMedia();
   mm.add("(min-width: 861px)", () => {
-    const scrub = { trigger: ".hscroll", start: "top bottom", end: "bottom top", scrub: 0.8, invalidateOnRefresh: true };
+    const scrub = { trigger: ".hscroll", start: "top bottom", end: "bottom top", scrub: true, invalidateOnRefresh: true };
     gsap.fromTo(hTrack, { x: () => innerWidth * 0.08 }, { x: () => -(hTrack.scrollWidth - innerWidth * 0.92), ease: "none", scrollTrigger: scrub });
     $$(".hs-item img", hTrack).forEach((im) => gsap.fromTo(im, { xPercent: -7 }, { xPercent: 7, ease: "none", scrollTrigger: scrub }));
   });
 
   /* --- reels : légère cascade au scroll --- */
   gsap.from(".reel", {
-    y: 140, opacity: 0, duration: 1.4, stagger: 0.15, ease,
-    scrollTrigger: { trigger: ".reels", start: "top 85%" },
+    y: 70, opacity: 0, duration: 0.9, stagger: 0.08, ease,
+    scrollTrigger: { trigger: ".reels", start: "top 92%" },
   });
 
   /* --- étapes : la ligne se dessine --- */
@@ -664,7 +672,7 @@ if (!hasGsap) {
     const dec = Number(el.dataset.decimals || 0);
     const obj = { v: end > 1000 ? end - 20 : 0 };
     gsap.to(obj, {
-      v: end, duration: 2, ease: "power3.out",
+      v: end, duration: 1.4, ease: "power3.out",
       scrollTrigger: { trigger: el, start: "top 90%" },
       onUpdate: () => (el.textContent = obj.v.toFixed(dec).replace(".", ",")),
     });
@@ -672,8 +680,8 @@ if (!hasGsap) {
 
   /* --- grille Instagram : légère rotation d'entrée --- */
   gsap.from(".insta__item", {
-    scale: 0.8, rotate: (i) => (i % 2 ? 6 : -6), opacity: 0, duration: 1.2, stagger: 0.08, ease,
-    scrollTrigger: { trigger: ".insta__grid", start: "top 88%" },
+    scale: 0.85, rotate: (i) => (i % 2 ? 4 : -4), opacity: 0, duration: 0.8, stagger: 0.05, ease,
+    scrollTrigger: { trigger: ".insta__grid", start: "top 92%" },
   });
 
   /* --- footer : la signature monte --- */
@@ -682,7 +690,7 @@ if (!hasGsap) {
     scrollTrigger: { trigger: ".footer", start: "top bottom", end: "bottom bottom", scrub: true },
   });
   gsap.from(".footer__script", {
-    scale: 0.6, rotate: -12, opacity: 0, duration: 1.4, ease: "back.out(1.6)",
+    scale: 0.6, rotate: -12, opacity: 0, duration: 0.9, ease: "back.out(1.6)",
     scrollTrigger: { trigger: ".footer__brand", start: "top 80%" },
   });
 
