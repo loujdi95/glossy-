@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossy Events — Décoration événementielle premium · Oise &amp; Île-de-France</title>
+  <meta name="description" content="Glossy Events, décoration événementielle premium : arches de ballons, backdrops et fleurs pour vos anniversaires, baby showers, baptêmes et événements professionnels dans le Sud de l'Oise et en Île-de-France.">
+  <meta name="theme-color" content="#F6F1EA">
+  <script>document.documentElement.className = 'js';</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
+  <script src="js/main.js?v=3" defer></script>
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <span class="loader__word"><span>G</span><span>l</span><span>o</span><span>s</span><span>s</span><span>y</span></span>
+      <span class="loader__script">Events</span>
+    </div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Glossy Events — accueil">
+        <span class="logo__main">Glossy</span>
+        <span class="logo__script">Events</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#realisations" class="nav__link">Réalisations</a>
+        <a href="#coulisses" class="nav__link">Coulisses</a>
+        <a href="#prestations" class="nav__link">Prestations</a>
+        <a href="#apropos" class="nav__link">À propos</a>
+        <a href="#contact" class="btn btn--dark btn--sm" data-magnetic><span>Demander un devis</span></a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__balloons" aria-hidden="true">
+        <span class="balloon balloon--1" data-depth="18"></span>
+        <span class="balloon balloon--2" data-depth="-26"></span>
+        <span class="balloon balloon--3" data-depth="12"></span>
+        <span class="balloon balloon--4" data-depth="-14"></span>
+        <span class="balloon balloon--5" data-depth="22"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow hero__eyebrow">Décoration événementielle premium · <span class="nowrap">Sud de l'Oise</span> &amp; <span class="nowrap">Île-de-France</span></p>
+          <h1 class="hero__title">
+            <span class="line"><span>On donne vie</span></span>
+            <span class="line"><span>à vos <em class="script">idées</em></span></span>
+          </h1>
+          <p class="hero__lead">
+            Arches de ballons, backdrops sur-mesure et compositions florales
+            pour vos anniversaires, baby showers, baptêmes et événements professionnels.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--dark" data-magnetic><span>Demander un devis</span></a>
+            <a href="#realisations" class="btn btn--ghost" data-magnetic><span>Voir les réalisations</span></a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="stack" id="stack" aria-label="Dernières publications Instagram"></div>
+          <div class="hero__badge" data-speed="40">
+            <svg viewBox="0 0 120 120" class="hero__badge-text" aria-hidden="true">
+              <defs><path id="circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text><textPath href="#circle">DÉCORATION ÉVÉNEMENTIELLE · DEPUIS 2020 ·</textPath></text>
+            </svg>
+            <span class="hero__badge-star" aria-hidden="true">✦</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#realisations" class="hero__scroll" aria-label="Défiler vers les réalisations">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee" aria-label="Nos univers">
+      <ul class="univers">
+        <li data-stagger><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Anniversaires</span></li>
+        <li data-stagger><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baby showers</span></li>
+        <li data-stagger><img src="images/insta/thumbs/zayn-3.jpg" alt=""><span>Baptêmes</span></li>
+        <li data-stagger><img src="images/insta/thumbs/dcte-6.jpg" alt=""><span>Événements pros</span></li>
+      </ul>
+      <p class="univers__tags" data-stagger>Arches de ballons <i>✦</i> Backdrops <i>✦</i> Fleurs <i>✦</i> Scénographie</p>
+      <div class="marquee__row" data-dir="-1" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.jpg" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.jpg" alt="">
+          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.jpg" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.jpg" alt="">
+        </div>
+      </div>
+      <div class="marquee__row marquee__row--outline" data-dir="1" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Arches de ballons</span><i>✦</i><span>Backdrops</span><i>✦</i><span>Fleurs</span><i>✦</i><span>Scénographie</span><i>✦</i>
+          <span>Arches de ballons</span><i>✦</i><span>Backdrops</span><i>✦</i><span>Fleurs</span><i>✦</i><span>Scénographie</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RÉALISATIONS ============ -->
+    <section class="section" id="realisations">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-fade>Portfolio</p>
+          <h2 class="section__title" data-split>Nos <em class="script">réalisations</em></h2>
+          <p class="section__lead" data-fade>Chaque événement a son histoire, ses couleurs et son univers. Cliquez pour voir toutes les photos.</p>
+        </div>
+
+        <div class="feed" id="feed"></div>
+
+        <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="ig-profile" data-fade>
+          <div class="ig-profile__info">
+            <span class="ig-avatar ig-avatar--lg"><span>G</span></span>
+            <div class="ig-profile__text">
+              <strong class="ig-profile__name">glossy.events</strong>
+              <span class="ig-profile__stats"><b>2,7k</b> abonnés</span>
+              <p class="ig-profile__bio">Décoration événementielle premium ✨<br>Ballons et fleurs 🌷🎈 · Sud de l'Oise</p>
+            </div>
+            <span class="btn btn--dark ig-profile__btn">
+              <span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg>
+                Voir plus sur Instagram
+              </span>
+            </span>
+          </div>
+          <div class="ig-profile__grid" aria-hidden="true">
+            <img src="images/insta/thumbs/dcte-7.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/zayn-4.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/dcte-3.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/eliyana-2.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/dcte-5.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/zayn-2.jpg" alt="" loading="lazy">
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ GALERIE HORIZONTALE ============ -->
+    <section class="hscroll" id="galerie" aria-label="Galerie de détails">
+      <div class="hscroll__pin">
+        <div class="container hscroll__head">
+          <p class="eyebrow" data-fade>Dans le détail</p>
+          <h2 class="section__title" data-split>Chaque détail <em class="script">compte</em></h2>
+        </div>
+        <div class="hscroll__track" id="hscroll-track"></div>
+      </div>
+    </section>
+
+    <!-- ============ REELS ============ -->
+    <section class="section section--dark" id="coulisses">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow eyebrow--light" data-fade>En coulisses</p>
+          <h2 class="section__title" data-split>La magie <em class="script">en vidéo</em></h2>
+          <p class="section__lead" data-fade>Installation, détails, ambiance : nos décors comme si vous y étiez.</p>
+        </div>
+
+        <div class="reels">
+          <button class="reel" data-event="dcte" data-video="images/video/reel-dcte.mp4" aria-label="Lire le reel DCTE School">
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-8.jpg"><source src="images/video/reel-dcte.mp4" type="video/mp4"></video>
+            <span class="reel__play" aria-hidden="true"></span>
+            <span class="reel__caption">DCTE School</span>
+          </button>
+          <button class="reel reel--offset" data-event="eliyana" data-video="images/video/reel-juin.mp4" aria-label="Lire le reel Eliyana Berry First Birthday">
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/eliyana-2.jpg"><source src="images/video/reel-juin.mp4" type="video/mp4"></video>
+            <span class="reel__play" aria-hidden="true"></span>
+            <span class="reel__caption">Eliyana · Berry First</span>
+          </button>
+          <button class="reel" data-event="dcte" data-video="images/video/reel-mai.mp4" aria-label="Lire le reel fleurs et zèbre">
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-9.jpg"><source src="images/video/reel-mai.mp4" type="video/mp4"></video>
+            <span class="reel__play" aria-hidden="true"></span>
+            <span class="reel__caption">Fleurs &amp; zèbre</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRESTATIONS ============ -->
+    <section class="section" id="prestations">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-fade>Prestations</p>
+          <h2 class="section__title" data-split>Ce que l'on <em class="script">crée</em></h2>
+        </div>
+
+        <div class="services">
+          <article class="service" data-stagger>
+            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/dcte-5.jpg" alt="Structure organique de ballons roses et verts"></div>
+            <span class="service__num">01</span>
+            <h3>Arches &amp; structures de ballons</h3>
+            <p>Arches organiques, guirlandes et colonnes, dans les couleurs exactes de votre thème.</p>
+          </article>
+          <article class="service" data-stagger>
+            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/eliyana-1.jpg" alt="Backdrop personnalisé fraises"></div>
+            <span class="service__num">02</span>
+            <h3>Backdrops personnalisés</h3>
+            <p>Panneaux, prénoms, chiffres géants : un décor photo unique pour votre événement.</p>
+          </article>
+          <article class="service" data-stagger>
+            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/dcte-3.jpg" alt="Bouquet de tulipes, roses et boule à facettes"></div>
+            <span class="service__num">03</span>
+            <h3>Compositions florales</h3>
+            <p>Fleurs fraîches ou artificielles pour sublimer tables, entrées et décors.</p>
+          </article>
+          <article class="service" data-stagger>
+            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/zayn-3.jpg" alt="Table dressée bleu ciel et vichy"></div>
+            <span class="service__num">04</span>
+            <h3>Scénographie &amp; installation</h3>
+            <p>Tables, mobilier et mise en scène complète, livrés et installés le jour J.</p>
+          </article>
+        </div>
+
+        <div class="steps">
+          <div class="steps__line"><span></span></div>
+          <ol>
+            <li data-stagger><span>01</span><h4>On échange</h4><p>Vous me racontez votre idée, votre thème et vos envies.</p></li>
+            <li data-stagger><span>02</span><h4>Devis &amp; moodboard</h4><p>Je vous propose un univers, des couleurs et un devis clair.</p></li>
+            <li data-stagger><span>03</span><h4>Préparation</h4><p>Commande, gonflage, montage : tout se prépare en coulisses.</p></li>
+            <li data-stagger><span>04</span><h4>Le jour J</h4><p>J'installe, vous profitez. Il ne reste qu'à faire la fête.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section section--tint" id="apropos">
+      <div class="container about">
+        <div class="about__visual">
+          <div class="arch about__main" data-reveal><img src="images/sarah.jpg" alt="Portrait de Sarah, fondatrice de Glossy Events"></div>
+          <div class="about__tag" data-speed="30"><span class="script">Sarah</span><small>Fondatrice</small></div>
+        </div>
+        <div class="about__text">
+          <p class="eyebrow" data-fade>Qui suis-je ?</p>
+          <h2 class="section__title" data-split>Moi, c'est <em class="script">Sarah</em></h2>
+          <p data-fade>
+            Décoratrice événementielle depuis 2020, je suis passionnée de décoration
+            et spécialisée dans les événements professionnels et privés.
+            Maman et entrepreneuse, je mets autant de soin dans chaque détail
+            que si c'était pour ma propre famille.
+          </p>
+          <p data-fade>
+            Formée et certifiée par la <strong>DCTE School</strong>, je transforme vos idées
+            en décors qui marquent les esprits, et les photos.
+          </p>
+          <ul class="facts">
+            <li data-stagger><strong data-count="2020">2020</strong><span>Création de Glossy Events</span></li>
+            <li data-stagger><strong>DCTE</strong><span>Formée &amp; certifiée</span></li>
+            <li data-stagger><strong><span data-count="2.7" data-decimals="1">2,7</span>k</strong><span>Abonnés Instagram</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="section insta">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow" data-fade>Instagram</p>
+          <h2 class="section__title" data-split>Suivez <em class="script">l'aventure</em></h2>
+          <p class="section__lead" data-fade><a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="link">@glossy.events</a></p>
+        </div>
+        <div class="insta__grid">
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-2.jpg" alt="Lettres DCTE lumineuses"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-4.jpg" alt="Oie décorative et fleurs des champs"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-7.jpg" alt="Tunnel de ballons lumineux"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/eliyana-2.jpg" alt="Backdrop cœur Eliyana"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-1.jpg" alt="Podium rose et zèbre"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-2.jpg" alt="Arbre en ballons verts"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--tint" id="contact">
+      <div class="container contact">
+        <div class="contact__intro">
+          <p class="eyebrow" data-fade>Contact</p>
+          <h2 class="section__title" data-split>Parlons de votre <em class="script">événement</em></h2>
+          <p data-fade>Racontez-moi votre projet, je vous réponds rapidement avec une proposition et un devis.</p>
+          <ul class="contact__infos">
+            <li data-stagger><span>Zone</span><span class="nowrap">Sud de l'Oise</span> &amp; <span class="nowrap">Île-de-France</span></li>
+            <li data-stagger><span>Instagram</span><a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="link">@glossy.events</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="devis" novalidate data-fade>
+          <div class="form__row">
+            <div class="field"><input type="text" id="f-nom" name="nom" placeholder=" " required autocomplete="name"><label for="f-nom">Prénom &amp; nom</label></div>
+            <div class="field"><input type="tel" id="f-tel" name="tel" placeholder=" " autocomplete="tel"><label for="f-tel">Téléphone</label></div>
+          </div>
+          <div class="field"><input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email"><label for="f-email">Email</label></div>
+          <div class="form__row">
+            <div class="field field--select">
+              <select id="f-type" name="type">
+                <option>Anniversaire</option>
+                <option>Baby shower</option>
+                <option>Baptême</option>
+                <option>Mariage</option>
+                <option>Événement professionnel</option>
+                <option>Autre</option>
+              </select>
+              <label for="f-type" class="is-fixed">Type d'événement</label>
+            </div>
+            <div class="field"><input type="date" id="f-date" name="date"><label for="f-date" class="is-fixed">Date</label></div>
+          </div>
+          <div class="field"><textarea id="f-msg" name="message" rows="4" placeholder=" "></textarea><label for="f-msg">Votre idée : thème, couleurs, lieu…</label></div>
+          <button type="submit" class="btn btn--dark btn--full" data-magnetic><span>Envoyer ma demande</span></button>
+          <p class="form__note" id="form-note" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <p class="footer__cta">Une idée ? <a href="#contact" class="link link--light">Parlons-en</a></p>
+        <nav class="footer__nav" aria-label="Liens de pied de page">
+          <a href="#realisations">Réalisations</a>
+          <a href="#prestations">Prestations</a>
+          <a href="#apropos">À propos</a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+      <div class="footer__brand" aria-hidden="true">
+        <span class="footer__word">Glossy</span>
+        <span class="footer__script">Events</span>
+      </div>
+      <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="footer__insta" aria-label="Instagram de Glossy Events : @glossy.events">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg>
+        <span>@glossy.events</span>
+      </a>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> Glossy Events</p>
+        <p>Décoration événementielle premium · <span class="nowrap">Sud de l'Oise</span> &amp; <span class="nowrap">Île-de-France</span></p>
+        <a href="#top" class="footer__top-link">Haut de page <i>↑</i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <div class="lb__backdrop" data-close></div>
+    <div class="lb__window">
+      <div class="lb__stage">
+        <div class="lb__track" id="lb-track"></div>
+        <button class="lb__nav lb__nav--prev" id="lb-prev" aria-label="Photo précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="lb__nav lb__nav--next" id="lb-next" aria-label="Photo suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="lb__dots" id="lb-dots"></div>
+      </div>
+      <aside class="lb__panel">
+        <div class="lb__head">
+          <span class="lb__avatar"><span>G</span></span>
+          <div><strong>glossy.events</strong><small id="lb-type"></small></div>
+        </div>
+        <h3 class="lb__title" id="lb-title"></h3>
+        <p class="lb__desc" id="lb-desc"></p>
+        <p class="lb__counter"><span id="lb-current">01</span> / <span id="lb-total">01</span></p>
+        <div class="lb__thumbs" id="lb-thumbs"></div>
+        <a href="#contact" class="btn btn--light btn--full lb__cta" data-close><span>Je veux le même univers</span></a>
+      </aside>
+    </div>
+    <button class="lb__close" data-close aria-label="Fermer la galerie"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+</body>
+</html>
