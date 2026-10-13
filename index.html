@@ -11,12 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
-  <script src="js/main.js?v=5" defer></script>
+  <script src="js/main.js?v=6" defer></script>
 </head>
 <body>
 
@@ -41,7 +41,6 @@
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <a href="#realisations" class="nav__link">Réalisations</a>
         <a href="#coulisses" class="nav__link">Coulisses</a>
-        <a href="#prestations" class="nav__link">Prestations</a>
         <a href="#apropos" class="nav__link">À propos</a>
         <a href="#contact" class="btn btn--dark btn--sm" data-magnetic><span>Demander un devis</span></a>
       </nav>
@@ -159,17 +158,6 @@
       </div>
     </section>
 
-    <!-- ============ GALERIE HORIZONTALE ============ -->
-    <section class="hscroll" id="galerie" aria-label="Galerie de détails">
-      <div class="hscroll__pin">
-        <div class="container hscroll__head">
-          <p class="eyebrow" data-fade>Dans le détail</p>
-          <h2 class="section__title" data-split>Chaque détail <em class="script">compte</em></h2>
-        </div>
-        <div class="hscroll__track" id="hscroll-track"></div>
-      </div>
-    </section>
-
     <!-- ============ REELS ============ -->
     <section class="section section--dark" id="coulisses">
       <div class="container">
@@ -195,53 +183,6 @@
             <span class="reel__play" aria-hidden="true"></span>
             <span class="reel__caption">Fleurs &amp; zèbre</span>
           </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PRESTATIONS ============ -->
-    <section class="section" id="prestations">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow" data-fade>Prestations</p>
-          <h2 class="section__title" data-split>Ce que l'on <em class="script">crée</em></h2>
-        </div>
-
-        <div class="services">
-          <article class="service" data-stagger>
-            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/dcte-5.jpg" alt="Structure organique de ballons roses et verts"></div>
-            <span class="service__num">01</span>
-            <h3>Arches &amp; structures de ballons</h3>
-            <p>Arches organiques, guirlandes et colonnes, dans les couleurs exactes de votre thème.</p>
-          </article>
-          <article class="service" data-stagger>
-            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/eliyana-1.jpg" alt="Backdrop personnalisé fraises"></div>
-            <span class="service__num">02</span>
-            <h3>Backdrops personnalisés</h3>
-            <p>Panneaux, prénoms, chiffres géants : un décor photo unique pour votre événement.</p>
-          </article>
-          <article class="service" data-stagger>
-            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/dcte-3.jpg" alt="Bouquet de tulipes, roses et boule à facettes"></div>
-            <span class="service__num">03</span>
-            <h3>Compositions florales</h3>
-            <p>Fleurs fraîches ou artificielles pour sublimer tables, entrées et décors.</p>
-          </article>
-          <article class="service" data-stagger>
-            <div class="service__img arch" data-reveal><img src="images/insta/thumbs/zayn-3.jpg" alt="Table dressée bleu ciel et vichy"></div>
-            <span class="service__num">04</span>
-            <h3>Scénographie &amp; installation</h3>
-            <p>Tables, mobilier et mise en scène complète, livrés et installés le jour J.</p>
-          </article>
-        </div>
-
-        <div class="steps">
-          <div class="steps__line"><span></span></div>
-          <ol>
-            <li data-stagger><span>01</span><h4>On échange</h4><p>Vous me racontez votre idée, votre thème et vos envies.</p></li>
-            <li data-stagger><span>02</span><h4>Devis &amp; moodboard</h4><p>Je vous propose un univers, des couleurs et un devis clair.</p></li>
-            <li data-stagger><span>03</span><h4>Préparation</h4><p>Commande, gonflage, montage : tout se prépare en coulisses.</p></li>
-            <li data-stagger><span>04</span><h4>Le jour J</h4><p>J'installe, vous profitez. Il ne reste qu'à faire la fête.</p></li>
-          </ol>
         </div>
       </div>
     </section>
@@ -343,7 +284,6 @@
         <p class="footer__cta">Une idée ? <a href="#contact" class="link link--light">Parlons-en</a></p>
         <nav class="footer__nav" aria-label="Liens de pied de page">
           <a href="#realisations">Réalisations</a>
-          <a href="#prestations">Prestations</a>
           <a href="#apropos">À propos</a>
           <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener">Instagram</a>
         </nav>

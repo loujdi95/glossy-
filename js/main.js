@@ -217,22 +217,6 @@ function cycleStack() {
 let stackTimer = null;
 const startStack = () => { if (!stackTimer) stackTimer = setInterval(cycleStack, 4200); };
 
-/* ---------- Galerie horizontale ---------- */
-const hTrack = $("#hscroll-track");
-const allPhotos = [];
-const lists = Object.entries(EVENTS).map(([key, ev]) => ev.media.map((m, i) => ({ key, i, m })).filter((x) => x.m.type === "img"));
-for (let r = 0; lists.some((l) => l[r]); r++) lists.forEach((l) => l[r] && allPhotos.push(l[r]));
-hTrack.innerHTML = allPhotos.map(({ key, i, m }) => `
-  <figure class="hs-item" data-event="${key}" data-index="${i}" tabindex="0" role="button" aria-label="Agrandir : ${m.alt}">
-    <img src="${m.thumb}" alt="${m.alt}" loading="lazy" draggable="false">
-    <figcaption>${EVENTS[key].title}</figcaption>
-  </figure>`).join("");
-$$(".hs-item", hTrack).forEach((item) => {
-  const open = () => Lightbox.open(item.dataset.event, Number(item.dataset.index), item);
-  item.addEventListener("click", open);
-  item.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
-});
-
 /* ---------- Reels : lecture auto quand visibles ---------- */
 const reels = $$(".reel");
 const reelIO = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
@@ -646,24 +630,10 @@ if (!hasGsap) {
     });
   });
 
-  /* --- galerie : les photos glissent pendant qu'on passe devant (sans bloquer le scroll) --- */
-  const mm = gsap.matchMedia();
-  mm.add("(min-width: 861px)", () => {
-    const scrub = { trigger: ".hscroll", start: "top bottom", end: "bottom top", scrub: true, invalidateOnRefresh: true };
-    gsap.fromTo(hTrack, { x: () => innerWidth * 0.08 }, { x: () => -(hTrack.scrollWidth - innerWidth * 0.92), ease: "none", scrollTrigger: scrub });
-    $$(".hs-item img", hTrack).forEach((im) => gsap.fromTo(im, { xPercent: -7 }, { xPercent: 7, ease: "none", scrollTrigger: scrub }));
-  });
-
   /* --- reels : légère cascade au scroll --- */
   gsap.from(".reel", {
     y: 70, opacity: 0, duration: 0.9, stagger: 0.08, ease,
     scrollTrigger: { trigger: ".reels", start: "top 92%" },
-  });
-
-  /* --- étapes : la ligne se dessine --- */
-  gsap.to(".steps__line span", {
-    scaleX: 1, ease: "none",
-    scrollTrigger: { trigger: ".steps", start: "top 80%", end: "bottom 55%", scrub: true },
   });
 
   /* --- compteurs --- */
