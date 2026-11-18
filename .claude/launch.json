@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "site",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [".claude/serve.py", "5173"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/serve.mjs", "5173"],
       "port": 5173
     }
   ]

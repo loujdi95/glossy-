@@ -16,8 +16,8 @@ const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
 /* ---------- Données : les publications Instagram ---------- */
 const P = "images/insta/";
-const img = (name, alt) => ({ type: "img", src: `${P}${name}.jpg`, thumb: `${P}thumbs/${name}.jpg`, alt });
-const vid = (file, poster, alt) => ({ type: "video", src: `images/video/${file}.mp4`, thumb: `${P}thumbs/${poster}.jpg`, alt });
+const img = (name, alt) => ({ type: "img", src: `${P}${name}.webp`, thumb: `${P}thumbs/${name}.webp`, alt });
+const vid = (file, poster, alt) => ({ type: "video", src: `images/video/${file}.mp4`, thumb: `${P}thumbs/${poster}.webp`, alt });
 
 const EVENTS = {
   eliyana: {
@@ -450,25 +450,66 @@ if (finePointer && hasGsap) {
 }
 
 /* ---------- Formulaire de devis ----------
-   TODO : brancher à l'email de Sarah (Formspree, Netlify Forms…). */
+   En attendant un email pour Sarah : la demande est mise en forme, copiée,
+   et une conversation Instagram avec elle s'ouvre. Il ne reste qu'à coller.
+   TODO : quand Sarah a un email, envoyer directement (Formspree, Resend…). */
+const DM_URL = "https://ig.me/m/glossy.events";
 const form = $("#devis");
 const note = $("#form-note");
 form.addEventListener("input", (e) => e.target.classList.remove("is-invalid"));
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let ok = true;
-  $$("[required]", form).forEach((field) => {
-    const valid = field.value.trim() !== "" && field.checkValidity();
+  $$("input, textarea", form).forEach((field) => {
+    const filled = field.value.trim() !== "";
+    const valid = field.required ? filled && field.checkValidity() : !filled || field.checkValidity();
     field.classList.toggle("is-invalid", !valid);
     if (!valid) ok = false;
   });
   if (!ok) {
-    note.textContent = "Merci de renseigner votre nom et un email valide.";
+    note.textContent = "Merci d'indiquer votre nom (et un email valide si vous en mettez un).";
     return;
   }
-  note.textContent = "Merci ! Votre demande est prête à être envoyée (formulaire de démo, à brancher).";
-  form.reset();
+
+  const v = (name) => form.elements[name].value.trim();
+  const date = v("date") ? new Date(v("date")).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }) : "";
+  const message = [
+    "Bonjour Sarah ✨ Je vous contacte depuis votre site pour une demande de devis :",
+    `• Nom : ${v("nom")}`,
+    v("tel") && `• Téléphone : ${v("tel")}`,
+    v("email") && `• Email : ${v("email")}`,
+    `• Événement : ${v("type")}${date ? ` le ${date}` : ""}`,
+    v("message") && `• Mon idée : ${v("message")}`,
+  ].filter(Boolean).join("\n");
+
+  // les deux appels restent dans le clic pour ne pas être bloqués par le navigateur
+  const copied = navigator.clipboard ? navigator.clipboard.writeText(message).then(() => true, () => false) : Promise.resolve(false);
+  window.open(DM_URL, "_blank", "noopener");
+  copied.then((done) => {
+    note.textContent = done
+      ? "Votre demande est copiée ✨ Collez-la dans la conversation Instagram qui vient de s'ouvrir pour l'envoyer à Sarah."
+      : "La conversation Instagram avec Sarah vient de s'ouvrir : présentez-lui votre projet en quelques mots ✨";
+  });
 });
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav.classList.contains("is-open")) { closeMenu(); burger.focus(); }
+});
+
+/* ---------- Barre « Demander un devis » (mobile) ----------
+   visible après le hero, cachée quand le contact ou le footer sont à l'écran */
+const mcta = $("#mcta");
+const blockers = new Set();
+const mctaIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => (en.isIntersecting ? blockers.add(en.target) : blockers.delete(en.target)));
+  updateMcta();
+}, { threshold: 0.05 });
+[$("#contact"), $(".footer")].forEach((el) => mctaIO.observe(el));
+function updateMcta() {
+  const past = window.scrollY > innerHeight * 0.8;
+  mcta.classList.toggle("is-visible", past && blockers.size === 0 && !nav.classList.contains("is-open"));
+}
+window.addEventListener("scroll", updateMcta, { passive: true });
 
 $("#year").textContent = new Date().getFullYear();
 

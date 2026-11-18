@@ -6,19 +6,60 @@
   <title>Glossy Events — Décoration événementielle premium · Oise &amp; Île-de-France</title>
   <meta name="description" content="Glossy Events, décoration événementielle premium : arches de ballons, backdrops et fleurs pour vos anniversaires, baby showers, baptêmes et événements professionnels dans le Sud de l'Oise et en Île-de-France.">
   <meta name="theme-color" content="#F6F1EA">
+  <link rel="canonical" href="https://glossy-mu.vercel.app/">
+
+  <!-- icônes -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- aperçu quand on partage le lien (WhatsApp, Instagram, Facebook…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Glossy Events">
+  <meta property="og:title" content="Glossy Events — Décoration événementielle premium">
+  <meta property="og:description" content="Arches de ballons, backdrops et fleurs pour vos anniversaires, baby showers, baptêmes et événements pros · Sud de l'Oise &amp; Île-de-France.">
+  <meta property="og:url" content="https://glossy-mu.vercel.app/">
+  <meta property="og:image" content="https://glossy-mu.vercel.app/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Glossy Events, décoration événementielle premium">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- fiche entreprise pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Glossy Events",
+    "description": "Décoration événementielle premium : arches de ballons, backdrops personnalisés et compositions florales pour anniversaires, baby showers, baptêmes et événements professionnels.",
+    "url": "https://glossy-mu.vercel.app/",
+    "image": "https://glossy-mu.vercel.app/images/og-image.jpg",
+    "logo": "https://glossy-mu.vercel.app/icon-512.png",
+    "foundingDate": "2020",
+    "founder": { "@type": "Person", "name": "Sarah" },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Oise" },
+      { "@type": "AdministrativeArea", "name": "Île-de-France" }
+    ],
+    "sameAs": ["https://www.instagram.com/glossy.events/"]
+  }
+  </script>
   <script>document.documentElement.className = 'js';</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
-  <script src="js/main.js?v=6" defer></script>
+  <script src="js/main.js?v=7" defer></script>
 </head>
 <body>
+
+  <a href="#realisations" class="skip">Aller au contenu</a>
 
   <!-- ============ LOADER ============ -->
   <div class="loader" aria-hidden="true">
@@ -100,16 +141,16 @@
     <!-- ============ MARQUEE ============ -->
     <section class="marquee" aria-label="Nos univers">
       <ul class="univers">
-        <li data-stagger><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Anniversaires</span></li>
-        <li data-stagger><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baby showers</span></li>
-        <li data-stagger><img src="images/insta/thumbs/zayn-3.jpg" alt=""><span>Baptêmes</span></li>
-        <li data-stagger><img src="images/insta/thumbs/dcte-6.jpg" alt=""><span>Événements pros</span></li>
+        <li data-stagger><img src="images/insta/thumbs/eliyana-1.webp" alt=""><span>Anniversaires</span></li>
+        <li data-stagger><img src="images/insta/thumbs/zayn-1.webp" alt=""><span>Baby showers</span></li>
+        <li data-stagger><img src="images/insta/thumbs/zayn-3.webp" alt=""><span>Baptêmes</span></li>
+        <li data-stagger><img src="images/insta/thumbs/dcte-6.webp" alt=""><span>Événements pros</span></li>
       </ul>
       <p class="univers__tags" data-stagger>Arches de ballons <i>✦</i> Backdrops <i>✦</i> Fleurs <i>✦</i> Scénographie</p>
       <div class="marquee__row" data-dir="-1" aria-hidden="true">
         <div class="marquee__track">
-          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.jpg" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.jpg" alt="">
-          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.jpg" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.jpg" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.jpg" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.jpg" alt="">
+          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.webp" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.webp" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.webp" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.webp" alt="">
+          <span>Anniversaires</span><img src="images/insta/thumbs/eliyana-1.webp" alt=""><span>Baby showers</span><img src="images/insta/thumbs/zayn-1.webp" alt=""><span>Baptêmes</span><img src="images/insta/thumbs/dcte-3.webp" alt=""><span>Événements pros</span><img src="images/insta/thumbs/dcte-6.webp" alt="">
         </div>
       </div>
       <div class="marquee__row marquee__row--outline" data-dir="1" aria-hidden="true">
@@ -147,12 +188,12 @@
             </span>
           </div>
           <div class="ig-profile__grid" aria-hidden="true">
-            <img src="images/insta/thumbs/dcte-7.jpg" alt="" loading="lazy">
-            <img src="images/insta/thumbs/zayn-4.jpg" alt="" loading="lazy">
-            <img src="images/insta/thumbs/dcte-3.jpg" alt="" loading="lazy">
-            <img src="images/insta/thumbs/eliyana-2.jpg" alt="" loading="lazy">
-            <img src="images/insta/thumbs/dcte-5.jpg" alt="" loading="lazy">
-            <img src="images/insta/thumbs/zayn-2.jpg" alt="" loading="lazy">
+            <img src="images/insta/thumbs/dcte-7.webp" alt="" loading="lazy">
+            <img src="images/insta/thumbs/zayn-4.webp" alt="" loading="lazy">
+            <img src="images/insta/thumbs/dcte-3.webp" alt="" loading="lazy">
+            <img src="images/insta/thumbs/eliyana-2.webp" alt="" loading="lazy">
+            <img src="images/insta/thumbs/dcte-5.webp" alt="" loading="lazy">
+            <img src="images/insta/thumbs/zayn-2.webp" alt="" loading="lazy">
           </div>
         </a>
       </div>
@@ -169,17 +210,17 @@
 
         <div class="reels">
           <button class="reel" data-event="dcte" data-video="images/video/reel-dcte.mp4" aria-label="Lire le reel DCTE School">
-            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-8.jpg"><source src="images/video/reel-dcte.mp4" type="video/mp4"></video>
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-8.webp"><source src="images/video/reel-dcte.mp4" type="video/mp4"></video>
             <span class="reel__play" aria-hidden="true"></span>
             <span class="reel__caption">DCTE School</span>
           </button>
           <button class="reel reel--offset" data-event="eliyana" data-video="images/video/reel-juin.mp4" aria-label="Lire le reel Eliyana Berry First Birthday">
-            <video muted loop playsinline preload="none" poster="images/insta/thumbs/eliyana-2.jpg"><source src="images/video/reel-juin.mp4" type="video/mp4"></video>
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/eliyana-2.webp"><source src="images/video/reel-juin.mp4" type="video/mp4"></video>
             <span class="reel__play" aria-hidden="true"></span>
             <span class="reel__caption">Eliyana · Berry First</span>
           </button>
           <button class="reel" data-event="dcte" data-video="images/video/reel-mai.mp4" aria-label="Lire le reel fleurs et zèbre">
-            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-9.jpg"><source src="images/video/reel-mai.mp4" type="video/mp4"></video>
+            <video muted loop playsinline preload="none" poster="images/insta/thumbs/dcte-9.webp"><source src="images/video/reel-mai.mp4" type="video/mp4"></video>
             <span class="reel__play" aria-hidden="true"></span>
             <span class="reel__caption">Fleurs &amp; zèbre</span>
           </button>
@@ -191,7 +232,7 @@
     <section class="section section--tint" id="apropos">
       <div class="container about">
         <div class="about__visual">
-          <div class="arch about__main" data-reveal><img src="images/sarah.jpg" alt="Portrait de Sarah, fondatrice de Glossy Events"></div>
+          <div class="arch about__main" data-reveal><img src="images/sarah.webp" alt="Portrait de Sarah, fondatrice de Glossy Events"></div>
           <div class="about__tag" data-speed="30"><span class="script">Sarah</span><small>Fondatrice</small></div>
         </div>
         <div class="about__text">
@@ -225,12 +266,12 @@
           <p class="section__lead" data-fade><a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="link">@glossy.events</a></p>
         </div>
         <div class="insta__grid">
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-2.jpg" alt="Lettres DCTE lumineuses"></a>
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-4.jpg" alt="Oie décorative et fleurs des champs"></a>
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-7.jpg" alt="Tunnel de ballons lumineux"></a>
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/eliyana-2.jpg" alt="Backdrop cœur Eliyana"></a>
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-1.jpg" alt="Podium rose et zèbre"></a>
-          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-2.jpg" alt="Arbre en ballons verts"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-2.webp" alt="Lettres DCTE lumineuses"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-4.webp" alt="Oie décorative et fleurs des champs"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-7.webp" alt="Tunnel de ballons lumineux"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/eliyana-2.webp" alt="Backdrop cœur Eliyana"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/dcte-1.webp" alt="Podium rose et zèbre"></a>
+          <a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="insta__item" data-stagger><img src="images/insta/thumbs/zayn-2.webp" alt="Arbre en ballons verts"></a>
         </div>
       </div>
     </section>
@@ -246,6 +287,12 @@
             <li data-stagger><span>Zone</span><span class="nowrap">Sud de l'Oise</span> &amp; <span class="nowrap">Île-de-France</span></li>
             <li data-stagger><span>Instagram</span><a href="https://www.instagram.com/glossy.events/" target="_blank" rel="noopener" class="link">@glossy.events</a></li>
           </ul>
+          <a href="https://ig.me/m/glossy.events" target="_blank" rel="noopener" class="btn btn--ghost contact__dm" data-stagger>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5L10 14M21.5 3.5l-7 17-4.5-6.5-6.5-4.5 18-6z"/></svg>
+              Écrire à Sarah sur Instagram
+            </span>
+          </a>
         </div>
 
         <form class="form" id="devis" novalidate data-fade>
@@ -253,7 +300,7 @@
             <div class="field"><input type="text" id="f-nom" name="nom" placeholder=" " required autocomplete="name"><label for="f-nom">Prénom &amp; nom</label></div>
             <div class="field"><input type="tel" id="f-tel" name="tel" placeholder=" " autocomplete="tel"><label for="f-tel">Téléphone</label></div>
           </div>
-          <div class="field"><input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email"><label for="f-email">Email</label></div>
+          <div class="field"><input type="email" id="f-email" name="email" placeholder=" " autocomplete="email"><label for="f-email">Email</label></div>
           <div class="form__row">
             <div class="field field--select">
               <select id="f-type" name="type">
@@ -270,6 +317,7 @@
           </div>
           <div class="field"><textarea id="f-msg" name="message" rows="4" placeholder=" "></textarea><label for="f-msg">Votre idée : thème, couleurs, lieu…</label></div>
           <button type="submit" class="btn btn--dark btn--full" data-magnetic><span>Envoyer ma demande</span></button>
+          <p class="form__hint">Votre demande est préparée pour vous et s'ouvre dans une conversation Instagram avec Sarah.</p>
           <p class="form__note" id="form-note" role="status"></p>
         </form>
       </div>
@@ -303,6 +351,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============ BARRE DEVIS (mobile) ============ -->
+  <div class="mcta" id="mcta">
+    <a href="#contact" class="btn btn--dark mcta__main"><span>Demander un devis</span></a>
+    <a href="https://ig.me/m/glossy.events" target="_blank" rel="noopener" class="mcta__ig" aria-label="Écrire à Sarah sur Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg>
+    </a>
+  </div>
 
   <!-- ============ LIGHTBOX ============ -->
   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
